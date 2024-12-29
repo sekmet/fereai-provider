@@ -1,0 +1,67 @@
+{
+  "name": "fereai-provider",
+  "version": "0.1.2",
+  "description": "Vercel AI Provider for FereAI APIs",
+  "author": "Carlos Guimaraes",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "lint": "eslint \"./**/*.ts*\"",
+    "type-check": "tsc --noEmit",
+    "prettier-check": "prettier --check \"./**/*.ts*\"",
+    "test": "pnpm test:node && pnpm test:edge",
+    "test:edge": "vitest --config vitest.edge.config.js --run",
+    "test:node": "vitest --config vitest.node.config.js --run"
+  },
+  "dependencies": {
+    "@ai-sdk/provider": "^1.0.0",
+    "@ai-sdk/provider-utils": "^2.0.0",
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "partial-json": "0.1.7",
+    "string-comparison": "^1.3.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@edge-runtime/vm": "^3.2.0",
+    "@types/node": "^20.10.4",
+    "@types/uuid": "^9.0.7",
+    "@types/ws": "^8.5.10",
+    "tsup": "^8.3.0",
+    "typescript": "5.6.3",
+    "vitest": "^2.1.3",
+    "zod": "3.23.8"
+  },
+  "peerDependencies": {
+    "zod": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "ai",
+    "vercel-ai",
+    "fere-ai",
+    "proAgent"
+  ],
+  "homepage": "https://github.com/sekmet/fereai-provider",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sekmet/fereai-provider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sekmet/fereai-provider/issues"
+  }
+}
